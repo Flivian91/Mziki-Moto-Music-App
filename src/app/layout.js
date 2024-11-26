@@ -23,15 +23,27 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="bg-primary grid grid-cols-[230px_1fr] text-text w-full ">
-          <Sidebar />
-          <div className="flex flex-col">
-            <Header />
-            <div className="p-4 flex-grow">{children}</div>
+        <div className="flex h-screen bg-primary text-text">
+          {/* Sidebar */}
+          <aside className="w-[230px] bg-secondary fixed mt-[60px]">
+            <Sidebar />
+          </aside>
+
+          {/* Main content wrapper */}
+          <div className="flex flex-col flex-grow ml-[230px]">
+            {/* Header */}
+            <header className="fixed w-full  top-0 left-0  bg-primary shadow z-10">
+              <Header />
+            </header>
+
+            {/* Scrollable content */}
+            <main className="mt-[60px] p-4 overflow-y-auto flex-grow">
+              {children}
+            </main>
           </div>
-        </main>
+        </div>
       </body>
     </html>
   );

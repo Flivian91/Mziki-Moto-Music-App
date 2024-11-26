@@ -13,9 +13,8 @@ import { TbMoodSing } from "react-icons/tb";
 
 function Sidebar() {
   return (
-    <aside className="bg-secondary flex flex-col px-4 py-5 overflow-auto">
+    <aside className="bg-secondary h-screen flex flex-col px-4 py-5 overflow-auto">
       <div className="flex-grow flex flex-col divide-y gap-5 divide-text">
-        <Logo />
         <SidebarContainer>
           <SidebarLink name={"Home"} icon={<FaHome />} link={"/"} />
           <SidebarLink
