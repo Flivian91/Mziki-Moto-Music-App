@@ -4,58 +4,80 @@ import SidebarContainer from "./sidebar/SidebarContainer";
 import Link from "next/link";
 import { IoIosSettings } from "react-icons/io";
 import SidebarLink from "./sidebar/SidebarLink";
-import { FaHome } from "react-icons/fa";
+import { FaHeart, FaHome, FaMusic, FaSearch } from "react-icons/fa";
 import { IoMdMusicalNotes } from "react-icons/io";
 import { IoIosAlbums } from "react-icons/io";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { FaUserTie } from "react-icons/fa6";
 import { TbMoodSing } from "react-icons/tb";
+import {
+  IoHelpCircleOutline,
+  IoLogOutOutline,
+  IoNewspaperOutline,
+  IoTimeOutline,
+} from "react-icons/io5";
 
 function Sidebar() {
   return (
-    <aside className="bg-secondary h-screen flex flex-col px-4 py-5 overflow-auto">
-      <div className="flex-grow flex flex-col divide-y gap-5 divide-text">
-        <SidebarContainer>
-          <SidebarLink name={"Home"} icon={<FaHome />} link={"/"} />
-          <SidebarLink
-            name={"Playlist"}
-            icon={<IoMdMusicalNotes />}
-            link={"/playlists"}
-          />
-        </SidebarContainer>
-        <div className="flex flex-col">
-          <h1 className="uppercase tracking-wide pt-2 font-semibold text-lg text-text">
-            Discovery
-          </h1>
-          <SidebarContainer>
-            <SidebarLink
-              name={"Popular"}
-              icon={<FaArrowTrendUp />}
-              link={"/"}
-            />
-            <SidebarLink name={"My Track"} icon={<FaUserTie />} link={"/"} />
-          </SidebarContainer>
-        </div>
-        <div className="flex flex-col">
-          <h1 className="uppercase tracking-wide pt-2 font-semibold text-lg text-text">
-            My PlayList
-          </h1>
-          <SidebarContainer>
-            <SidebarLink name={"Love"} icon={<FaHome />} link={"/"} />
-            <SidebarLink
-              name={"Morinig"}
-              icon={<IoMdMusicalNotes />}
-              link={"/"}
-            />
-            <SidebarLink name={"Travel"} icon={<IoIosAlbums />} link={"/"} />
-            <SidebarLink name={"Afternoon"} icon={<IoIosAlbums />} link={"/"} />
-            <SidebarLink name={"Liked"} icon={<IoIosAlbums />} link={"/"} />
-          </SidebarContainer>
-        </div>
-      </div>
-      <div className="">
-        <SidebarLink name="Settings" link="settings" icon={<IoIosSettings />} />
-      </div>
+    <aside className="bg-secondary h-screen flex flex-col px-4 pt-2 pb-12 overflow-auto">
+      <SidebarContainer>
+        {/* Core Links */}
+        <SidebarLink name="Home" icon={<FaHome />} link="/" />
+        <SidebarLink name="Search" icon={<FaSearch />} link="/search" />
+        <SidebarLink name="Library" icon={<FaMusic />} link="/library" />
+
+        {/* Discovery Links */}
+        <h1 className="uppercase tracking-wide pt-4 text-lg font-semibold text-text">
+          Discovery
+        </h1>
+        <SidebarLink
+          name="Trending"
+          icon={<FaArrowTrendUp />}
+          link="/trending"
+        />
+        <SidebarLink
+          name="New Releases"
+          icon={<IoNewspaperOutline />}
+          link="/new-releases"
+        />
+        <SidebarLink
+          name="Genres & Moods"
+          icon={<TbMoodSing />}
+          link="/genres"
+        />
+
+        {/* Personal Links */}
+        <h1 className="uppercase tracking-wide pt-4 text-lg font-semibold text-text">
+          Your Library
+        </h1>
+        <SidebarLink
+          name="Liked Songs"
+          icon={<FaHeart />}
+          link="/liked-songs"
+        />
+        <SidebarLink
+          name="Recently Played"
+          icon={<IoTimeOutline />}
+          link="/recently-played"
+        />
+        <SidebarLink
+          name="My Playlists"
+          icon={<IoMdMusicalNotes />}
+          link="/playlists"
+        />
+
+        {/* Utility Links */}
+        <h1 className="uppercase tracking-wide pt-4 text-lg font-semibold text-text">
+          Account
+        </h1>
+        <SidebarLink
+          name="Settings"
+          icon={<IoIosSettings />}
+          link="/settings"
+        />
+        <SidebarLink name="Help" icon={<IoHelpCircleOutline />} link="/help" />
+        <SidebarLink name="Log Out" icon={<IoLogOutOutline />} link="/logout" />
+      </SidebarContainer>
     </aside>
   );
 }
