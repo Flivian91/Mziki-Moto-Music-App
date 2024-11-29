@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+
 import React from "react";
 import AudioWaveForm from "../audio-player/AudioWaveForm";
 
@@ -18,6 +17,7 @@ function TrackItem() {
           <div>
             <AudioWaveForm />
           </div>
+          {/* The component Component should only appear when the song is playing */}
           {/* <TrackItemComment /> */}
           <TrackItemsFooter />
         </div>

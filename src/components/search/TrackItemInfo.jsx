@@ -1,6 +1,7 @@
 import React from "react";
 import PlayPauseButton from "../buttons/PlayPauseButton";
 import Link from "next/link";
+import TrackArtistName from "./TrackArtistName";
 
 function TrackItemInfo() {
   return (
@@ -8,10 +9,8 @@ function TrackItemInfo() {
       <div className="p-1 bg-accent hover:bg-primary transition-all duration-200 rounded-full flex items-center justify-center ">
         <PlayPauseButton />
       </div>
-      <div className=" flex-1 flex flex-col transition-all duration-200transition-all duration-200">
-        <Link href={"/"} className="hover:underline tracking-wide">
-          Dj FLivo
-        </Link>
+      <div className="flex-1 flex flex-col transition-all duration-200transition-all duration-200">
+        <TrackArtistName />
         <Link
           href={"/"}
           className="text-stone-200 tracking-wide hover:text-accent "

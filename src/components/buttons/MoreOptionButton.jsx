@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
-import MoreOptionsModel from "../models/MoreOptionsModel";
+import MoreOptionsModel from "../models/ModelMoreOptions";
 import TransparentOverlay from "../ovelays/TransparentOverlay";
 
 function MoreOptionButton() {

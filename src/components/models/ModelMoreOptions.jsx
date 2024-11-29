@@ -6,7 +6,7 @@ import GoToArtistButton from "../buttons/GoToArtistButton";
 import GoToAlbumButton from "../buttons/GoToAlbumButton";
 import ShareTrackURL from "../buttons/ShareTrackURL";
 
-function MoreOptionsModel() {
+function ModelMoreOptions() {
   return (
     <div className="absolute bottom-full right-0 w-full py-4 px-2 bg-surface shadow-md rounded border z-30 border-primary">
       <div className="flex flex-col gap-2 text-stone-200 transition-all duration-200">
@@ -20,4 +20,4 @@ function MoreOptionsModel() {
   );
 }
 
-export default MoreOptionsModel;
+export default ModelMoreOptions;
