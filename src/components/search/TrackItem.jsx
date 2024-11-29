@@ -18,7 +18,7 @@ function TrackItem() {
           <div>
             <AudioWaveForm />
           </div>
-          <TrackItemComment />
+          {/* <TrackItemComment /> */}
           <TrackItemsFooter />
         </div>
       </div>
