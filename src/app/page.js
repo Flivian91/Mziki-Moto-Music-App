@@ -12,6 +12,8 @@ export default function Home() {
         <Categories />
         <NewMusic />
         <PopularArtist />
+        {/* Audio Player component should be displayed when the music first loads */}
+        
       </section>
       <FavoriteAlbum />
     </main>

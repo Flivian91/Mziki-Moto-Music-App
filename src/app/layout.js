@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
+import AudioPlayer from "@/components/audio-player/AudioPlayer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,7 +28,7 @@ export default function RootLayout({ children }) {
       >
         <div className="flex h-screen bg-primary text-text">
           {/* Sidebar */}
-          <aside className="w-[230px] bg-secondary fixed mt-[60px]">
+          <aside className="w-[230px] bg-secondary fixed mt-[60px] ">
             <Sidebar />
           </aside>
 
@@ -39,10 +40,12 @@ export default function RootLayout({ children }) {
             </header>
 
             {/* Scrollable content */}
-            <main className="mt-[60px] p-4 overflow-y-auto flex-grow">
+            <main className="mt-[60px] p-4 overflow-y-auto flex-grow pb-[125px]">
               {children}
             </main>
           </div>
+
+          <AudioPlayer />
         </div>
       </body>
     </html>

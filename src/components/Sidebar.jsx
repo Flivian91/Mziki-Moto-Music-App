@@ -18,8 +18,9 @@ import {
 } from "react-icons/io5";
 
 function Sidebar() {
+  // Only apply that Pg when the music only loads
   return (
-    <aside className="bg-secondary h-screen flex flex-col px-4 pt-2 pb-12 overflow-auto">
+    <section className="bg-secondary h-screen flex flex-col px-4 pt-2  overflow-auto pb-[150px]">
       <SidebarContainer>
         {/* Core Links */}
         <SidebarLink name="Home" icon={<FaHome />} link="/" />
@@ -78,7 +79,7 @@ function Sidebar() {
         <SidebarLink name="Help" icon={<IoHelpCircleOutline />} link="/help" />
         <SidebarLink name="Log Out" icon={<IoLogOutOutline />} link="/logout" />
       </SidebarContainer>
-    </aside>
+    </section>
   );
 }
 
