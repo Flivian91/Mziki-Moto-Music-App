@@ -1,7 +1,7 @@
 import React from "react";
 import { IoAdd } from "react-icons/io5";
 
-function PlaylistButton() {
+function ModelPlayListButton() {
   return (
     <button className="flex gap-3 items-center hover:bg-primary/60 py-2 px-2 rounded">
       <IoAdd />
@@ -10,4 +10,4 @@ function PlaylistButton() {
   );
 }
 
-export default PlaylistButton;
+export default ModelPlayListButton;

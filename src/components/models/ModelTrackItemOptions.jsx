@@ -1,7 +1,7 @@
-import React from 'react'
-import PlaylistButton from '../buttons/PlayListButton'
-import GoToArtistButton from '../buttons/GoToArtistButton'
-import GoToAlbumButton from '../buttons/GoToAlbumButton'
+import React from "react";
+import PlaylistButton from "../buttons/ModelPlayListButton";
+import GoToArtistButton from "../buttons/GoToArtistButton";
+import GoToAlbumButton from "../buttons/GoToAlbumButton";
 
 function ModelTrackItemOptions() {
   return (
@@ -12,7 +12,7 @@ function ModelTrackItemOptions() {
         <GoToAlbumButton />
       </div>
     </div>
-  )
+  );
 }
 
-export default ModelTrackItemOptions
+export default ModelTrackItemOptions;
