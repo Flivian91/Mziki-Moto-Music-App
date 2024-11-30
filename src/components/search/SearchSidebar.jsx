@@ -8,7 +8,7 @@ import { PiPlaylist } from "react-icons/pi";
 
 function SearchSidebar() {
   return (
-    <div className="bg-primary px-2 py-3 rounded shadow ">
+    <div className="bg-primary fixed left-[250px] top-[110px] px-2 py-3 rounded shadow ">
       <div className="flex flex-col gap-2 text-stone-400 font-semibold tracking-wider">
         <Link
           href={"/search"}

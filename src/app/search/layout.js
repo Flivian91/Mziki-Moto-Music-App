@@ -16,7 +16,7 @@ function SearchLayout({ children }) {
         </div>
 
         {/* Scrollable Children */}
-        <div className="overflow-y-auto">{children}</div>
+        <div className="overflow-y-auto mt-8">{children}</div>
       </div>
     </div>
   );
