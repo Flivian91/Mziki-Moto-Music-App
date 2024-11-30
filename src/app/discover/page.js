@@ -9,10 +9,25 @@ function DiscoverPage() {
       <div className="flex flex-col gap-8">
         {/* Recommended Category */}
         <DiscoverView>
-          <DiscoverHeader />
+          <DiscoverHeader heading="Recommended for you" />
           <DiscoverBody />
         </DiscoverView>
         {/* Next Category */}
+        <DiscoverView>
+          <DiscoverHeader heading="TRENDING SONGS" />
+          <DiscoverBody />
+        </DiscoverView>
+
+        {/* Next Category */}
+        <DiscoverView>
+          <DiscoverHeader heading="TRENDING ALBUMS" />
+          <DiscoverBody />
+        </DiscoverView>
+        {/* Next Category */}
+        <DiscoverView>
+          <DiscoverHeader heading="Top MzikiMoto Playlists" />
+          <DiscoverBody />
+        </DiscoverView>
       </div>
     </div>
   );
