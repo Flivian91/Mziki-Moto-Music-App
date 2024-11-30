@@ -25,26 +25,30 @@ function Sidebar() {
         {/* Core Links */}
         <SidebarLink name="Home" icon={<FaHome />} link="/" />
         <SidebarLink name="Search" icon={<FaSearch />} link="/search" />
-        <SidebarLink name="Library" icon={<FaMusic />} link="/library" />
 
         {/* Discovery Links */}
         <h1 className="uppercase tracking-wide pt-4 text-lg font-semibold text-text">
           Discovery
         </h1>
         <SidebarLink
+          name="Discover"
+          icon={<FaArrowTrendUp />}
+          link="/discover"
+        />
+        <SidebarLink
           name="Trending"
           icon={<FaArrowTrendUp />}
-          link="/trending"
+          link="/discover/trending"
         />
         <SidebarLink
           name="New Releases"
           icon={<IoNewspaperOutline />}
-          link="/new-releases"
+          link="/discover/new-releases"
         />
         <SidebarLink
           name="Genres & Moods"
           icon={<TbMoodSing />}
-          link="/genres"
+          link="/discover/genres"
         />
 
         {/* Personal Links */}
