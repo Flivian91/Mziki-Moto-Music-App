@@ -4,7 +4,7 @@ import React from "react";
 
 function TrackItemCoverImage() {
   return (
-    <Link href={"/"} className="flex items-center justify-center">
+    <Link href={"/"} className="flex">
       <Image
         src={"/profile.webp"}
         alt="profile image"
