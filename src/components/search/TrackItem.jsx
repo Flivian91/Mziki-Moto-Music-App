@@ -9,7 +9,7 @@ import TrackItemsFooter from "./TrackItemsFooter";
 
 function TrackItem() {
   return (
-    <div>
+    <div className="w-full">
       <div className="grid grid-cols-[130px_1fr] gap-2">
         <TrackItemCoverImage />
         <div className="flex flex-col text-sm font-semibold gap-4">
