@@ -1,11 +1,12 @@
-import React from 'react'
+import ChangePasswordView from "@/components/settings/ChangePasswordView";
+import React from "react";
 
 function ChangePassword() {
   return (
-    <div>
-      Change Password
+    <div className="pt-4">
+      <ChangePasswordView />
     </div>
-  )
+  );
 }
 
-export default ChangePassword
+export default ChangePassword;

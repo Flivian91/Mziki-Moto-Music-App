@@ -1,6 +1,6 @@
 import React from "react";
 
-function TextInput({ label = "" }) {
+function EmailInput({ label = "", isDisabled = false }) {
   return (
     <div className="flex flex-col gap-2">
       <label
@@ -12,12 +12,13 @@ function TextInput({ label = "" }) {
         {label}
       </label>
       <input
-        type="text"
+        type="email"
         id={label.toLocaleLowerCase()}
-        className="w-full bg-secondary border-none outline-none text-stone-300 rounded font-mono text-lg px-2 py-1 caret-accent"
+        disabled={isDisabled}
+        className="w-full bg-secondary border-none outline-none text-stone-300 rounded font-mono text-lg px-2 py-1 caret-accent disabled:cursor-not-allowed disabled:bg-text/30"
       />
     </div>
   );
 }
 
-export default TextInput;
+export default EmailInput;
