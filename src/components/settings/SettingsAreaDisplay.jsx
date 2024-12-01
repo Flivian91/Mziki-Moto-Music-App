@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import SettingsHeader from "./SettingsHeader";
+import SettingsNavigationLinnks from "./SettingsNavigationLinnks";
 
 function SettingsAreaDisplay() {
   return (
     <div>
-      Display Area
+      <SettingsHeader />
+      <SettingsNavigationLinnks />
     </div>
-  )
+  );
 }
 
-export default SettingsAreaDisplay
+export default SettingsAreaDisplay;

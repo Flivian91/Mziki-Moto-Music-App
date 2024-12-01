@@ -1,11 +1,16 @@
-import React from 'react'
+import SettingsAreaDisplay from "@/components/settings/SettingsAreaDisplay";
+import SettingsBanner from "@/components/settings/SettingsBanner";
+import React from "react";
 
-function SettingsLayout() {
+function SettingsLayout({ children }) {
   return (
-    <div>
-      
+    <div className="flex flex-col ">
+      <SettingsBanner />
+      <div>
+        <SettingsAreaDisplay />
+      </div>
     </div>
-  )
+  );
 }
 
-export default SettingsLayout
+export default SettingsLayout;
