@@ -4,6 +4,7 @@ import TextInput from "../inputs/TextInput";
 function UpdateArtistURL() {
   return (
     <div className="flex flex-col gap-2 mt-2">
+      <h1 className="text-base font-bold tracking-wide">Artist URL</h1>
       <h2 className="text-xs tracking-wide font-bold ">
         Note: When you change your artist URL, refences to your music the old
         URL automatically changes to the New URL

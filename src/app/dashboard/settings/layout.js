@@ -9,6 +9,7 @@ function SettingsLayout({ children }) {
       <div className="pb-[600px]">
         <SettingsAreaDisplay>{children}</SettingsAreaDisplay>
       </div>
+
     </div>
   );
 }
