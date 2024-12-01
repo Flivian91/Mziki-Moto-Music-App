@@ -6,7 +6,7 @@ function SettingsLayout({ children }) {
   return (
     <div className="flex flex-col">
       <SettingsBanner />
-      <div className="pb-96">
+      <div className="pb-[600px]">
         <SettingsAreaDisplay>{children}</SettingsAreaDisplay>
       </div>
     </div>
