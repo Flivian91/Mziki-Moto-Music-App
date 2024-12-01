@@ -67,7 +67,7 @@ function Sidebar() {
         <SidebarLink
           name="My Uploads"
           icon={<IoTimeOutline />}
-          link="/dashboard/ruploads"
+          link="/dashboard/uploads"
         />
         <SidebarLink
           name="My Playlists"
