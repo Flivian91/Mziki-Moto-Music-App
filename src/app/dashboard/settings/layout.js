@@ -4,10 +4,10 @@ import React from "react";
 
 function SettingsLayout({ children }) {
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col">
       <SettingsBanner />
-      <div>
-        <SettingsAreaDisplay />
+      <div className="pb-96">
+        <SettingsAreaDisplay>{children}</SettingsAreaDisplay>
       </div>
     </div>
   );

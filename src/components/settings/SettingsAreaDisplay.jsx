@@ -2,11 +2,14 @@ import React from "react";
 import SettingsHeader from "./SettingsHeader";
 import SettingsNavigationLinnks from "./SettingsNavigationLinnks";
 
-function SettingsAreaDisplay() {
+function SettingsAreaDisplay({ children }) {
   return (
-    <div>
-      <SettingsHeader />
-      <SettingsNavigationLinnks />
+    <div className="flex flex-col gap-2 relative ">
+      <div className="w-4/5 absolute -top-7 left-1/2 transform -translate-x-1/2 bg-surface px-2">
+        <SettingsHeader />
+        <SettingsNavigationLinnks />
+        <div>{children}</div>
+      </div>
     </div>
   );
 }
