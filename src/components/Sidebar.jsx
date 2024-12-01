@@ -23,8 +23,12 @@ function Sidebar() {
     <section className="bg-secondary h-screen flex flex-col px-4 pt-2  overflow-auto pb-[150px]">
       <SidebarContainer>
         {/* Core Links */}
-        <SidebarLink name="Home" icon={<FaHome />} link="/" />
-        <SidebarLink name="Search" icon={<FaSearch />} link="/search" />
+        <SidebarLink name="Home" icon={<FaHome />} link="/dashboard/" />
+        <SidebarLink
+          name="Search"
+          icon={<FaSearch />}
+          link="/dashboard/search"
+        />
 
         {/* Discovery Links */}
         <h1 className="uppercase tracking-wide pt-4 text-lg font-semibold text-text">
@@ -33,22 +37,22 @@ function Sidebar() {
         <SidebarLink
           name="Discover"
           icon={<FaArrowTrendUp />}
-          link="/discover"
+          link="/dashboard/discover"
         />
         <SidebarLink
           name="Trending"
           icon={<FaArrowTrendUp />}
-          link="/discover/trending"
+          link="/dashboard/discover/trending"
         />
         <SidebarLink
           name="New Releases"
           icon={<IoNewspaperOutline />}
-          link="/discover/new-releases"
+          link="/dashboard/discover/new-releases"
         />
         <SidebarLink
           name="Genres & Moods"
           icon={<TbMoodSing />}
-          link="/discover/genres"
+          link="/dashboard/discover/genres"
         />
 
         {/* Personal Links */}
@@ -58,17 +62,17 @@ function Sidebar() {
         <SidebarLink
           name="Liked Songs"
           icon={<FaHeart />}
-          link="/liked-songs"
+          link="/dashboard/liked-songs"
         />
         <SidebarLink
-          name="Recently Played"
+          name="My Uploads"
           icon={<IoTimeOutline />}
-          link="/recently-played"
+          link="/dashboard/ruploads"
         />
         <SidebarLink
           name="My Playlists"
           icon={<IoMdMusicalNotes />}
-          link="/playlists"
+          link="/dashboard/playlists"
         />
 
         {/* Utility Links */}
@@ -78,10 +82,18 @@ function Sidebar() {
         <SidebarLink
           name="Settings"
           icon={<IoIosSettings />}
-          link="/settings"
+          link="/dashboard/settings"
         />
-        <SidebarLink name="Help" icon={<IoHelpCircleOutline />} link="/help" />
-        <SidebarLink name="Log Out" icon={<IoLogOutOutline />} link="/logout" />
+        <SidebarLink
+          name="Help"
+          icon={<IoHelpCircleOutline />}
+          link="/dashboard/help"
+        />
+        <SidebarLink
+          name="Log Out"
+          icon={<IoLogOutOutline />}
+          link="/dashboard/logout"
+        />
       </SidebarContainer>
     </section>
   );
