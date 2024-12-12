@@ -2,6 +2,7 @@ import AudioPlayer from "@/components/audio-player/AudioPlayer";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import React from "react";
+export const metadata ={title:"Client Dashboard"}
 
 function DashboardLayout({ children }) {
   return (

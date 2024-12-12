@@ -1,14 +1,10 @@
 import React from "react";
-import Logo from "./sidebar/Logo";
 import SidebarContainer from "./sidebar/SidebarContainer";
-import Link from "next/link";
 import { IoIosSettings } from "react-icons/io";
 import SidebarLink from "./sidebar/SidebarLink";
 import { FaHeart, FaHome, FaMusic, FaSearch } from "react-icons/fa";
 import { IoMdMusicalNotes } from "react-icons/io";
-import { IoIosAlbums } from "react-icons/io";
 import { FaArrowTrendUp } from "react-icons/fa6";
-import { FaUserTie } from "react-icons/fa6";
 import { TbMoodSing } from "react-icons/tb";
 import {
   IoHelpCircleOutline,
@@ -18,12 +14,11 @@ import {
 } from "react-icons/io5";
 
 function Sidebar() {
-  // Only apply that Pg when the music only loads
   return (
     <section className="bg-secondary h-screen flex flex-col px-4 pt-2  overflow-auto pb-[150px]">
       <SidebarContainer>
         {/* Core Links */}
-        <SidebarLink name="Home" icon={<FaHome />} link="/dashboard/" />
+        <SidebarLink name="Home" icon={<FaHome />} link="/dashboard" />
         <SidebarLink
           name="Search"
           icon={<FaSearch />}
