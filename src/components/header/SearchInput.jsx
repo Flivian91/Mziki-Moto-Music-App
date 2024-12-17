@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 function SearchInput() {
   return (
     // Width to be changed by the media query
-    <form className="w-1/2">
+    <form className="lg:w-1/2 md:w-1/3 hidden md:block ">
       <div className="flex items-center gap-2 bg-stone-900 rounded shadow-sm">
         <button className="text-text p-2">
           <FaSearch />

@@ -6,7 +6,6 @@ import React from "react";
 function SidebarLink({ icon, name = "", link = "/" }) {
   const pathName = usePathname();
   // /dashboard/search
-  const newLink = link.split("/").slice(2);
   const isActive = pathName === link;
   return (
     <Link

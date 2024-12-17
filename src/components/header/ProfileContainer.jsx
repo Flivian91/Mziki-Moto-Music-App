@@ -1,14 +1,20 @@
-import React from 'react'
-import DownloadButton from './DownloadButton'
-import Profile from './Profile'
+import React from "react";
+import DownloadButton from "./DownloadButton";
+import Profile from "./Profile";
+import { BiSearch } from "react-icons/bi";
 
 function ProfileContainer() {
   return (
-    <div className='flex items-center gap-4'>
-      <DownloadButton/>
-      <Profile/>
+    <div className="flex items-center gap-4">
+      <div className="hidden md:flex">
+        <DownloadButton />
+      </div>
+      <button className="md:hidden block p-1 sm:p-1.5 text-xl sm:text-2xl rounded shadow text-white/70 hover:text-accent active:text-accent">
+        <BiSearch />
+      </button>
+      <Profile />
     </div>
-  )
+  );
 }
 
-export default ProfileContainer
+export default ProfileContainer;

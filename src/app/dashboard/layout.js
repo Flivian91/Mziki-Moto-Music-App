@@ -8,12 +8,12 @@ function DashboardLayout({ children }) {
   return (
     <div className="flex h-screen bg-primary text-text">
       {/* Sidebar */}
-      <aside className="w-[230px] bg-secondary fixed mt-[60px] ">
+      <aside className="lg:block hidden w-[230px] bg-secondary fixed mt-[60px] ">
         <Sidebar />
       </aside>
 
       {/* Main content wrapper */}
-      <div className="flex flex-col flex-grow ml-[230px]">
+      <div className="flex flex-col flex-grow lg:ml-[230px]">
         {/* Header */}
         <header className="fixed w-full  top-0 left-0  bg-primary shadow z-10">
           <Header />
