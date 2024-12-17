@@ -6,7 +6,7 @@ function Profile() {
     <div>
       <button className="flex items-center justify-center">
         <Image
-          className="h-8 w-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border-2 border-accent"
+          className="h-8 w-8 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full border-2 border-accent"
           src={profile}
           alt="User profile image"
         />
