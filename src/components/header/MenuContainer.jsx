@@ -7,8 +7,11 @@ function MenuContainer() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <MobileSidebar />
-      <button className="lg:hidden block p-1 sm:p-1.5 border border-accent text-xl sm:text-2xl rounded shadow text-white/70 hover:text-accent active:text-accent">
+      {isOpen && <MobileSidebar onClose={setIsOpen} />}
+      <button
+        onClick={() => setIsOpen(true)}
+        className="lg:hidden block p-1 sm:p-1.5 border border-accent text-xl sm:text-2xl rounded shadow text-white/70 hover:text-accent active:text-accent"
+      >
         <BiMenu />
       </button>
     </div>

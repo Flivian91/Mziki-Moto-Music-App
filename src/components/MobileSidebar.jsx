@@ -2,7 +2,7 @@ import React from "react";
 import SidebarContainer from "./sidebar/SidebarContainer";
 import { IoIosSettings } from "react-icons/io";
 import SidebarLink from "./sidebar/SidebarLink";
-import { FaHeart, FaHome, FaMusic, FaSearch } from "react-icons/fa";
+import { FaHeart, FaHome, FaMusic, FaSearch, FaTimes } from "react-icons/fa";
 import { IoMdMusicalNotes } from "react-icons/io";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { TbMoodSing } from "react-icons/tb";
@@ -12,10 +12,23 @@ import {
   IoNewspaperOutline,
   IoTimeOutline,
 } from "react-icons/io5";
+import { BiLibrary } from "react-icons/bi";
+import Tooltip from "./buttons/Tooltip";
 
-function MobileSidebar() {
+function MobileSidebar({ onClose }) {
   return (
-    <section className="bg-secondary h-screen flex flex-col px-4 pt-2  overflow-auto pb-[150px] w-[200px] fixed top-0 left-0 z-50">
+    <section className="bg-secondary h-screen flex flex-col px-4 pt-2  overflow-auto pb-[150px] w-[230px] fixed top-0 left-0 z-50">
+      <div className="flex items-center justify-between text-xl py-1 transition-all duration-300">
+        <button className="hover:text-accent active:text-accent hover:scale-105">
+          <BiLibrary />
+        </button>
+        <button
+          onClick={() => onClose(false)}
+          className="hover:text-accent active:text-accent hover:scale-105"
+        >
+          <FaTimes />
+        </button>
+      </div>
       <SidebarContainer>
         {/* Core Links */}
         <SidebarLink name="Home" icon={<FaHome />} link="/dashboard" />
