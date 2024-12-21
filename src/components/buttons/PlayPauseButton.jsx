@@ -12,7 +12,7 @@ function PlayPauseButton() {
       <button
         onMouseEnter={() => setIsView(true)}
         onMouseLeave={() => setIsView(false)}
-        className="text-2xl text-text hover:text-accent transition-all duration-200 p-2 rounded-full hover:bg-surface/85"
+        className="text-base md:text-2xl text-text hover:text-accent transition-all duration-200 p-2 rounded-full "
       >
         {/* <IoIosPause /> */}
         <FaPlay />

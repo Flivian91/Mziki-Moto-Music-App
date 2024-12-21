@@ -17,7 +17,7 @@ import Tooltip from "./buttons/Tooltip";
 
 function MobileSidebar({ onClose }) {
   return (
-    <section className="bg-secondary h-screen flex flex-col px-4 pt-2  overflow-auto pb-[150px] w-[230px] fixed top-0 left-0 z-50">
+    <section className="bg-secondary h-screen flex flex-col px-4 pt-2  overflow-auto pb-[130px] w-[230px] fixed top-0 left-0 z-50">
       <div className="flex items-center justify-between text-xl py-1 transition-all duration-300">
         <button className="hover:text-accent active:text-accent hover:scale-105">
           <BiLibrary />

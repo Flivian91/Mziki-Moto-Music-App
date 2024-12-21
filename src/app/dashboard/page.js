@@ -7,7 +7,7 @@ import React from "react";
 
 function DashboardPage() {
   return (
-    <main className="bg-primary grid grid-cols-[1fr_0.3fr] gap-5">
+    <main className="bg-primary grid grid-cols-1 md:grid-cols-[1fr_0.3fr] gap-5">
       <section className="flex flex-col gap-8">
         <FeaturedElement />
         <Categories />
