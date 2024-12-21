@@ -7,7 +7,7 @@ function Categories() {
       <h1 className="uppercase tracking-wide font-semibold text-lg md:text-xl text-stone-100">
         Category
       </h1>
-      <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+      <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-3 flex-wrap">
         <CategoriesItem category={"Pop Music"} />
         <CategoriesItem category={"Pop Music"} />
         <CategoriesItem category={"Pop Music"} active={true} />
