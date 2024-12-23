@@ -6,11 +6,12 @@ import { FaUser } from "react-icons/fa6";
 import { IoAlbums } from "react-icons/io5";
 import { PiPlaylist } from "react-icons/pi";
 
-function SearchSidebar() {
+function SearchBarModel({ onClose }) {
   return (
-    <div className="bg-primary fixed left-0 lg:left-[250px] top-[110px] px-2 py-3 rounded shadow ">
+    <div className="fixed top-[100px] sm:top-[117px] left-1 bg-surface py-2 px-3 rounded shadow z-40">
       <div className="flex flex-col gap-2 text-stone-400 font-semibold tracking-wider">
         <Link
+          onClick={onClose}
           href={"/dashboard/search"}
           className="flex items-center gap-2 hover:bg-surface/80 rounded hover:text-accent p-1 "
         >
@@ -18,6 +19,7 @@ function SearchSidebar() {
           <span>Everything</span>
         </Link>
         <Link
+          onClick={onClose}
           href={"/dashboard/search/songs"}
           className="flex items-center gap-2 hover:bg-surface/80 rounded hover:text-accent p-1 "
         >
@@ -25,6 +27,7 @@ function SearchSidebar() {
           <span>Songs</span>
         </Link>
         <Link
+          onClick={onClose}
           href={"/dashboard/search/artists"}
           className="flex items-center gap-2 hover:bg-surface/80 rounded hover:text-accent p-1 "
         >
@@ -32,6 +35,7 @@ function SearchSidebar() {
           <span>Artist</span>
         </Link>
         <Link
+          onClick={onClose}
           href={"/dashboard/search/album"}
           className="flex items-center gap-2 hover:bg-surface/80 rounded hover:text-accent p-1 "
         >
@@ -39,6 +43,7 @@ function SearchSidebar() {
           <span>Album</span>
         </Link>
         <Link
+          onClick={onClose}
           href={"/dashboard/search/playlist"}
           className="flex items-center gap-2 hover:bg-surface/80 rounded hover:text-accent p-1 "
         >
@@ -50,4 +55,4 @@ function SearchSidebar() {
   );
 }
 
-export default SearchSidebar;
+export default SearchBarModel;

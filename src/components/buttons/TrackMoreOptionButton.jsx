@@ -12,10 +12,10 @@ function TrackMoreOptionButton() {
       {isOpen && <TransparentOverlay onClose={() => setIsOpen(false)} />}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className=" flex items-center text-sm gap-2 px-3 py-1 border border-text rounded"
+        className=" flex items-center text-base sm:text-sm gap-2 px-1 sm:px-3 py-1 sm:py-1 border border-text rounded"
       >
         <PiDotsThreeOutlineFill />
-        <span className="font-mono">More</span>
+        <span className="font-mono hidden sm:block">More</span>
       </button>
     </div>
   );

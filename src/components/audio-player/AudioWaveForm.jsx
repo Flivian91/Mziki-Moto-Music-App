@@ -13,7 +13,7 @@ function AudioWaveForm() {
       container: waveformRef.current, // Use the div ref
       waveColor: "#00E4CB", // Waveform color
       progressColor: "#666C6C", // Progress bar color
-      height: 60, // Height of the waveform
+      height: 30, // Height of the waveform
       responsive: true, // Make it responsive
       interact: false, // Disable interaction (static waveform)
     });
@@ -27,7 +27,7 @@ function AudioWaveForm() {
 
   return (
     <div className="flex-grow flex items-center">
-      <div ref={waveformRef} className="w-full h-12"></div>
+      <div ref={waveformRef} className="w-full h-5 sm:h-7"></div>
     </div>
   );
 }

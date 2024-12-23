@@ -8,14 +8,16 @@ function FavoriteAlbum() {
       <h1 className="uppercase tracking-wide font-semibold text-xl text-stone-100">
         Favorite Album
       </h1>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-1">
         <FavouriteAlbumItem />
         <FavouriteAlbumItem />
         <FavouriteAlbumItem />
         <FavouriteAlbumItem />
         <FavouriteAlbumItem />
       </div>
-      <MusicOffline />
+      <div className="flex justify-center items-center">
+        <MusicOffline />
+      </div>
     </section>
   );
 }

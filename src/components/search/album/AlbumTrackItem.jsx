@@ -13,7 +13,7 @@ function AlbumTrackItem() {
         alt="track Image"
         className="h-6 w-6 rounded-sm"
       />
-      <h1 className="text-stone-300 font-semibold tracking-wide">
+      <h1 className="text-stone-300 sm:text-sm text-xs font-semibold tracking-wide">
         Lorem ipsum dolor sit amet.
       </h1>
       <div className="flex items-center gap-1 justify-center">

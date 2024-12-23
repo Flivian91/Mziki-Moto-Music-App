@@ -11,6 +11,20 @@ function DiscoverPage() {
         <DiscoverView>
           <DiscoverHeader heading="Recommended for you" />
           <DiscoverBody />
+          {/* THIS IS THE CONTENT ON THE DiscoverBody component */}
+          {/* 
+          <div>
+      <div className="relative group">
+        <DiscoverPreviousButton />
+        <div className="grid grid-cols-4 gap-3">
+          <DiscoverItem />
+          <DiscoverItem />
+          <DiscoverItem />
+          <DiscoverItem />
+        </div>
+        <DiscoverNextButton />
+      </div>
+    </div> */}
         </DiscoverView>
         {/* Next Category */}
         <DiscoverView>

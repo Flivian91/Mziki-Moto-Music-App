@@ -10,7 +10,7 @@ function TrackItemCoverImage() {
         alt="profile image"
         width={"100"}
         height={"100"}
-        className="h-32 w-32 rounded-sm"
+        className="h-12 w-12 sm:h-32 sm:w-32 rounded-sm"
       />
     </Link>
   );

@@ -7,7 +7,7 @@ function SearchArtistPage() {
     <div>
       <div className="flex flex-col gap-3">
         <SearchResultsFound number={350} category="Artists" />
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-4 sm:gap-10">
           <SearchArtistItem />
           <SearchArtistItem />
           <SearchArtistItem />

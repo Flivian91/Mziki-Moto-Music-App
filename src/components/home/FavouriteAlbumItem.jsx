@@ -5,8 +5,17 @@ import { FaLink } from "react-icons/fa";
 import Link from "next/link";
 function FavouriteAlbumItem() {
   return (
-    <Link href={"/"} className="grid grid-cols-[0.3fr_1fr] gap-3">
-      <Image className="h-16 rounded-md shadow-md" src={albumImage} alt="Album Image" />
+    <Link
+      href={"/"}
+      className="grid grid-cols-[0.3fr_1fr] gap-3 transition-all duration-300 rounded hover:shadow hover:bg-surface p-1"
+    >
+      <div className="h-16  shadow-md overflow-hidden">
+        <Image
+          className="object-fill w-full rounded"
+          src={albumImage}
+          alt="Album Image"
+        />
+      </div>
       <div className="flex flex-col gap-3">
         <h2 className="text-xs tracking-wide text-stone-200">
           SoundScapes from Beyond

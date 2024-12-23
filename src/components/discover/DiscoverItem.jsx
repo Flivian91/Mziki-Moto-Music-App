@@ -5,14 +5,14 @@ import PlayPauseButton from "../buttons/PlayPauseButton";
 
 function DiscoverItem() {
   return (
-    <div className="flex flex-col relative group/minor">
+    <div className="flex flex-col relative group/minor w-56">
       <Link href={"/"}>
         <Image
           src={"/profile.webp"}
           width={100}
           height={100}
           alt="recommentded pic"
-          className="w-full h-56"
+          className="w-56 h-56"
         />
       </Link>
       <div className="absolute invisible group-hover/minor:visible bottom-14 right-1 p-1 rounded-full transition-all duration-200 bg-surface hover:bg-surface/85">

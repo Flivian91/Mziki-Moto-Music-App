@@ -13,12 +13,12 @@ function TrackItemInfo() {
         <TrackArtistName />
         <Link
           href={"/"}
-          className="text-stone-200 tracking-wide hover:text-accent "
+          className="text-stone-200 text-sm sm:text-base  tracking-wide hover:text-accent "
         >
           Best kenyan music Mix Vol 2
         </Link>
       </div>
-      <div className="flex flex-col">
+      <div className="hidden flex-col sm:flex">
         <p className="text-xs font-bold text-text/60">2 months ago</p>
         <Link href={"/"} className="p-1 rounded-full bg-surface text-text">
           #Arbantone
