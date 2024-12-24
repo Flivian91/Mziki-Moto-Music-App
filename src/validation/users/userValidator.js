@@ -16,10 +16,15 @@ export const userRegisterSchema = z
   })
   .required();
 
-  //02. Login Validators
+//02. Login Validators
 export const userLoginSchema = z.object({
   email: z.string().email({ message: "Invalid Email address!" }).toLowerCase(),
   password: z.coerce
     .string()
     .min(6, { message: "Password Must be 7 or more charaters long" }),
+});
+
+// 03. Create Recovery Email
+export const userRecoverySchema = z.object({
+  email: z.string().email({ message: "Invalid Email address!" }).toLowerCase(),
 });

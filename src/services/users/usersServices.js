@@ -12,8 +12,8 @@ export async function loginUser(data) {
 }
 
 // 03. Check User Authenticated State
-export async function checkUser(){
-  return await account.get()
+export async function checkUser() {
+  return await account.get();
 }
 
 // 04.Check User Preference
@@ -21,4 +21,11 @@ export async function checkUser(){
 // 05. Update User Preference
 
 // 06. Forget Password to create Recovery Email
-
+export async function createRecoveryEmail(data) {
+  const { email } = await data;
+  // Url TO be changed Later
+  return await account.createRecovery(
+    email,
+    "http://localhost:3000/dashboard/settings/password"
+  );
+}
