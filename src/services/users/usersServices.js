@@ -29,3 +29,10 @@ export async function createRecoveryEmail(data) {
     "http://localhost:3000/dashboard/settings/password"
   );
 }
+
+// 07.Update Password From then Recovery Email
+export async function updateRecoveryEmail(data){
+  
+
+  return await account.updateRecovery()
+}
