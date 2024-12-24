@@ -31,8 +31,7 @@ export async function createRecoveryEmail(data) {
 }
 
 // 07.Update Password From then Recovery Email
-export async function updateRecoveryEmail(data){
-  
-
-  return await account.updateRecovery()
+export async function updateRecoveryEmail(data) {
+  const { user_id, secret, password } = data;
+  return await account.updateRecovery(user_id,secret, password)
 }
