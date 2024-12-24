@@ -2,19 +2,25 @@
 import React, { useState } from "react";
 import { FaFastBackward } from "react-icons/fa";
 import Tooltip from "./Tooltip";
-import { LuRepeat } from "react-icons/lu";
+import { LuRepeat, LuRepeat1 } from "react-icons/lu";
 
-function LoopButton() {
+function LoopButton({ isActive, onClick }) {
   const [isView, setIsView] = useState(false);
   return (
     <div className="relative">
       {isView && <Tooltip text="Loop" />}
       <button
+        onClick={onClick}
         onMouseEnter={() => setIsView(true)}
         onMouseLeave={() => setIsView(false)}
-        className="text-xl text-text hover:text-accent transition-all duration-200 p-2 rounded-full hover:bg-surface/85"
+        className={`${
+          isActive
+            ? " text-accent hover:text-accent "
+            : " text-text hover:text-accent "
+        } text-xl  transition-all duration-200 p-2 rounded-full hover:bg-surface/85`}
       >
-        <LuRepeat />
+        {isActive ? <LuRepeat1 /> : <LuRepeat />}
+        {/* <LuRepeat /> */}
         {/* <LuRepeat1 /> */}
       </button>
     </div>

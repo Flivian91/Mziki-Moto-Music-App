@@ -58,4 +58,23 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background-color: #00e4cb; /* Accent color */
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  transform: scale(1.2);
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  outline: none;
+  transform: scale(1.3);
+}
 
