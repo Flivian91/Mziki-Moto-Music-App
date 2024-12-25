@@ -1,11 +1,11 @@
 "use client";
 import React, { useContext } from "react";
-import { AudioContext } from "./AudioPlayer";
 import QueueButton from "../buttons/QueueButton";
 import LikeButton from "../buttons/LikeButton";
 import LoopButton from "../buttons/LoopButton";
 import AddPlaylistButton from "../buttons/AddPlaylistButton";
 import MoreOptionButton from "../buttons/MoreOptionButton";
+import { AudioContext } from "@/context/AudioContextProvider";
 
 function AudioOptions() {
   const { isLooping, setIsLooping, volume, setVolume } =

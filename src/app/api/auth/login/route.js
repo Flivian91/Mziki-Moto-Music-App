@@ -10,7 +10,7 @@ export async function POST(req) {
     const data = await req.json();
     // Validate
     const validatedData = userLoginSchema.parse(data);
-    // Create Session
+    // Create Session, and passing the validated data to the Application Layer
     const session = await loginUser(validatedData);    
     if (!session) {
       return NextResponse.json(

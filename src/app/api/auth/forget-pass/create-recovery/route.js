@@ -7,7 +7,9 @@ import { NextResponse } from "next/server";
 export async function POST(req) {
   try {
     const data = await req.json();
+    // Validate the Req data
     const validatedData = userRecoverySchema.parse(data);
+    // Send the validated data to Application layer
     const res = await createRecoveryEmail(validatedData);
     return NextResponse.json(
       { message: "Recovery email sent on your Email", data: res },

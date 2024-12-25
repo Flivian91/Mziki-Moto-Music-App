@@ -4,7 +4,10 @@ const { z } = require("zod");
 // 01. Registration Validators
 export const userRegisterSchema = z
   .object({
-    name: z.string().toLowerCase(),
+    name: z
+      .string()
+      .toLowerCase()
+      .max(128, { message: "Name cannot exceed 128 chars" }),
     email: z
       .string()
       .email({ message: "Invalid Email address!" })
@@ -12,7 +15,8 @@ export const userRegisterSchema = z
     username: z.string().trim(),
     password: z.coerce
       .string()
-      .min(6, { message: "Password Must be 7 or more charaters long" }),
+      .max(128, { message: "Password Characters cannot exceed 128" })
+      .min(8, { message: "Password Must be 8 or more charaters long" }),
   })
   .required();
 
@@ -21,7 +25,8 @@ export const userLoginSchema = z.object({
   email: z.string().email({ message: "Invalid Email address!" }).toLowerCase(),
   password: z.coerce
     .string()
-    .min(6, { message: "Password Must be 7 or more charaters long" }),
+    .min(8, { message: "Password Must be 8 or more charaters long" })
+    .max(128, { message: "Password character cannot exceed 128" }),
 });
 
 // 03. Create Recovery Email
@@ -35,5 +40,6 @@ export const userUpdateRecoveryEmail = z.object({
   secret: z.string(),
   password: z.coerce
     .string()
-    .min(6, { message: "Password Must be 7 or more charaters long" }),
+    .min(8, { message: "Password Must be 8 or more charaters long" })
+    .max(128, { message: "Password characters cannot exceed 128" }),
 });

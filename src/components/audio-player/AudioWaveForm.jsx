@@ -1,13 +1,20 @@
 "use client";
-import React, { useEffect, useRef, useContext, useState } from "react";
+import { AudioContext } from "@/context/AudioContextProvider";
+import React, { useEffect, useRef, useContext } from "react";
 import WaveSurfer from "wavesurfer.js";
-import { AudioContext } from "./AudioPlayer";
 
 function AudioWaveForm() {
   const waveformRef = useRef(null);
   const wavesurferRef = useRef(null);
-  const { isPlaying, volume, currentTrack } = useContext(AudioContext);
-  const [currentTime, setCurrentTime] = useState(null);
+  const {
+    isPlaying,
+    volume,
+    currentTrack,
+    currentTime,
+    setCurrentTime,
+    duration,
+    setDuration,
+  } = useContext(AudioContext);
 
   useEffect(() => {
     if (!waveformRef.current) return;
@@ -21,35 +28,53 @@ function AudioWaveForm() {
       responsive: true,
     });
 
-    wavesurferRef.current.load(currentTrack);
+    // Event listener for duration
+    wavesurferRef.current.on("ready", () => {
+      setDuration(wavesurferRef.current.getDuration());
+    });
+
+    // Event listener for playback progress
+    wavesurferRef.current.on("audioprocess", () => {
+      setCurrentTime(wavesurferRef.current.getCurrentTime());
+    });
+
+    // Load the track
+    if (currentTrack) {
+      wavesurferRef.current.load(currentTrack);
+    }
 
     return () => wavesurferRef.current.destroy();
   }, [currentTrack]);
 
-  // Control playback
   useEffect(() => {
     if (!wavesurferRef.current) return;
     isPlaying ? wavesurferRef.current.play() : wavesurferRef.current.pause();
   }, [isPlaying]);
 
-  // Update volume
   useEffect(() => {
     if (!wavesurferRef.current) return;
     wavesurferRef.current.setVolume(volume);
   }, [volume]);
-  // useEffect(() => {
-  //   if (!wavesurferRef.current) return;
-  //   wavesurferRef.current.audioprocess(currentTime);
-  // }, [currentTime]);
+
+  // Format time for display
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
 
   return (
     <div className="flex-grow flex items-center gap-2 text-gray-100/70">
       <span className="text-sm font-semibold tracking-wider">
-        0.00
+        {formatTime(currentTime)}
       </span>
-      <div ref={waveformRef} className="w-full h-5 sm:h-7"></div>
+      <div
+        ref={waveformRef}
+        aria-label="Audio Waveform"
+        className="w-full h-5 sm:h-7"
+      ></div>
       <span className="text-sm font-semibold tracking-wider text-gray-100/70">
-        3.00
+        {formatTime(duration)}
       </span>
     </div>
   );
