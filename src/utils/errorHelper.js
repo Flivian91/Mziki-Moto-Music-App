@@ -2,7 +2,10 @@ import { ZodError } from "zod";
 
 export function handleError(error) {
   if (error instanceof ZodError) {
-    return { status: 400, message: error.message, errors: error.errors };
+    const formattedErrors = error.errors.map(
+      (e) => `${e.path[0]}: ${e.message}`
+    );
+    return { status: 400, message: error.message };
   }
   return {
     status: error.status || 500,

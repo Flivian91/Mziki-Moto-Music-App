@@ -4,8 +4,6 @@ import { handleError } from "@/utils/errorHelper";
 import { userRegisterSchema } from "@/validation/users/userValidator";
 import { NextResponse } from "next/server";
 
-
-
 // Route
 export async function POST(req) {
   try {
