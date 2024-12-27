@@ -1,12 +1,12 @@
 // Perform the following steps:
 // 1. Perform GET request to fetch user details using userId from dynamic route
 // 2.Perform Update request to update user details using userId from dynamic route
-// 3. Perform DELETE request to delete user details using userId from dynamic route
 // 4.On each Router handle check if UserId is valid or not
 // 5. If userId is not valid then send 404 status with message "User not found"
 
 import { databases } from "@/config/appwriteClient";
 import {
+  deleteUserServices,
   updateUserServices,
   userDataServices,
 } from "@/services/users/userServices";
@@ -57,3 +57,4 @@ export async function PATCH(req) {
     return NextResponse.json({ message }, { status });
   }
 }
+
