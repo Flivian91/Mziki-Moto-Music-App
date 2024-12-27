@@ -4,9 +4,7 @@
 // 4.On each Router handle check if UserId is valid or not
 // 5. If userId is not valid then send 404 status with message "User not found"
 
-import { databases } from "@/config/appwriteClient";
 import {
-  deleteUserServices,
   updateUserServices,
   userDataServices,
 } from "@/services/users/userServices";
@@ -23,8 +21,9 @@ export async function POST(req) {
     const data = await req.json();
     // validate userId
     const validatedUserId = listDetailValidation.safeParse(data);
+    
     // Return user details
-    const userData = await userDataServices(validatedUserId);
+    const userData = await userDataServices(validatedUserId.data);
 
     return NextResponse.json(userData.documents[0], { status: 200 });
   } catch (error) {

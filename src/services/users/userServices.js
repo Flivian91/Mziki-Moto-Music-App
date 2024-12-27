@@ -6,6 +6,8 @@ import { Query } from "appwrite";
 // Handle th UserId Services
 export async function userDataServices(data) {
   const { userId } = data;
+  console.log(userId);
+  
   try {
     if (!userId) {
       throw new Error("User Id is Not provided");
@@ -21,6 +23,7 @@ export async function userDataServices(data) {
     if (userDetails.total === 0) {
       throw new Error("User not found");
     }
+    return userDetails;
   } catch (error) {
     throw new Error(error);
   }
