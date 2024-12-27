@@ -1,4 +1,4 @@
-import { checkUser } from "@/services/users/usersServices";
+import { checkUser } from "@/services/auth/authServices";
 import { handleError } from "@/utils/errorHelper";
 import { NextResponse } from "next/server";
 

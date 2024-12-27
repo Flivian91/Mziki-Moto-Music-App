@@ -1,7 +1,7 @@
 // Req: Full name, Email, username, password;
-import { createUser } from "@/services/users/usersServices";
+import { createUser } from "@/services/auth/authServices";
 import { handleError } from "@/utils/errorHelper";
-import { userRegisterSchema } from "@/validation/users/userValidator";
+import { userRegisterSchema } from "@/validation/auth/authValidator";
 import { NextResponse } from "next/server";
 
 // Route

@@ -2,10 +2,10 @@ import { ZodError } from "zod";
 
 export function handleError(error) {
   if (error instanceof ZodError) {
-    const formattedErrors = error.errors.map(
-      (e) => `${e.path[0]}: ${e.message}`
-    );
-    return { status: 400, message: error.message };
+    const formattedErrors = `Validation errors: ${error.errors
+      .map((err) => `${err.path.join(".")}: ${err.message}`)
+      .join(", ")}`;
+    return { status: 400, message: formattedErrors };
   }
   return {
     status: error.status || 500,

@@ -1,6 +1,6 @@
-import { createRecoveryEmail } from "@/services/users/usersServices";
+import { createRecoveryEmail } from "@/services/auth/authServices";
 import { handleError } from "@/utils/errorHelper";
-import { userRecoverySchema } from "@/validation/users/userValidator";
+import { userRecoverySchema } from "@/validation/auth/authValidator";
 import { NextResponse } from "next/server";
 
 // POST, req: email, url

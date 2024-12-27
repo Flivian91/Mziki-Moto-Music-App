@@ -1,8 +1,8 @@
 // POST, req: user_id, secret, password
 
-import { updateRecoveryEmail } from "@/services/users/usersServices";
+import { updateRecoveryEmail } from "@/services/auth/authServices";
 import { handleError } from "@/utils/errorHelper";
-import { userUpdateRecoveryEmail } from "@/validation/users/userValidator";
+import { userUpdateRecoveryEmail } from "@/validation/auth/authValidator";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {

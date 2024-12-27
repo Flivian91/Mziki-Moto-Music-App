@@ -1,6 +1,6 @@
 const { z } = require("zod");
 
-// Validation
+// Validation, confirmPassword
 // 01. Registration Validators
 export const userRegisterSchema = z
   .object({
@@ -24,7 +24,10 @@ export const userRegisterSchema = z
       .max(128, { message: "Password Characters cannot exceed 128" })
       .min(8, { message: "Password Must be 8 or more charaters long" }),
   })
-  .required();
+  .required()
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Password and Confirm Password must be the same",
+  });
 
 //02. Login Validators
 export const userLoginSchema = z.object({
@@ -51,7 +54,9 @@ export const userUpdateRecoveryEmail = z.object({
 });
 
 // 05. Update Email Verification
-export const updateEmailVerificationSchema = z.object({
-  user_id: z.coerce.string(),
-  secret: z.string(),
-}).required();
+export const updateEmailVerificationSchema = z
+  .object({
+    user_id: z.coerce.string(),
+    secret: z.string(),
+  })
+  .required();

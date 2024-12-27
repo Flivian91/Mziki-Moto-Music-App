@@ -1,6 +1,6 @@
-import { updateEmailVerification } from "@/services/users/usersServices";
+import { updateEmailVerification } from "@/services/auth/authServices";
 import { handleError } from "@/utils/errorHelper";
-import { updateEmailVerificationSchema } from "@/validation/users/userValidator";
+import { updateEmailVerificationSchema } from "@/validation/auth/authValidator";
 import { NextResponse } from "next/server";
 
 // POST, req secret, user_id

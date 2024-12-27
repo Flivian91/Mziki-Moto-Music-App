@@ -6,34 +6,27 @@
 // 5. If userId is not valid then send 404 status with message "User not found"
 
 import { databases } from "@/config/appwriteClient";
+import {
+  updateUserServices,
+  userDataServices,
+} from "@/services/users/userServices";
 import { handleError } from "@/utils/errorHelper";
-import { Query } from "appwrite";
+import {
+  listDetailValidation,
+  userDataValidation,
+} from "@/validation/users/usersValidator";
 import { NextResponse } from "next/server";
 
 // GET User Details
 export async function POST(req) {
   try {
-    // const searchParams = req.nextUrl.searchParams;
-    // const userId = searchParams.get("userId");
-    const { userId } = await req.json();
+    const data = await req.json();
+    // validate userId
+    const validatedUserId = listDetailValidation.safeParse(data);
+    // Return user details
+    const userData = await userDataServices(validatedUserId);
 
-    if (!userId) {
-      return NextResponse.json(
-        { message: "User Id is Not provided" },
-        { status: 404 }
-      );
-    }
-    // Fetch user details using userId
-    const userDetails = await databases.listDocuments(
-      process.env.DATABASE_ID,
-      process.env.USERS_COLLECTION_ID,
-      [Query.equal("$id", userId)]
-    );
-
-    if (userDetails.total === 0) {
-      return NextResponse.json({ message: "User not found" }, { status: 404 });
-    }
-    return NextResponse.json(userDetails.documents[0], { status: 200 });
+    return NextResponse.json(userData.documents[0], { status: 200 });
   } catch (error) {
     const { message, status } = handleError(error);
     return NextResponse.json({ message }, { status });
@@ -43,29 +36,20 @@ export async function POST(req) {
 // Update User Details
 export async function PATCH(req) {
   try {
-    const { userId, updatedData } = await req.json();
-
-    if (!userId) {
-      return NextResponse.json(
-        { message: "User Id is Not provided" },
-        { status: 404 }
-      );
-    }
-
-    // Fetch user details using userId
-    const updatedUserDetails = await databases.updateDocument(
-      process.env.DATABASE_ID,
-      process.env.USERS_COLLECTION_ID,
-      userId,
-      updatedData
+    const data = await req.json();
+    // validate databases
+    const validatedData = userDataValidation.parse(data.updatedData);
+    // Update user details
+    const validatedUserId = listDetailValidation.safeParse({
+      userId: data.userId,
+    });
+    const updatedUserData = await updateUserServices(
+      validatedUserId.data.userId,
+      validatedData
     );
 
-    if (updatedUserDetails.code === 404) {
-      return NextResponse.json({ message: "User not found" }, { status: 404 });
-    }
-
     return NextResponse.json(
-      { message: "Record Updated Successfully", updatedUserDetails },
+      { message: "Record Updated Successfully", updatedUserData },
       { status: 200 }
     );
   } catch (error) {

@@ -1,8 +1,8 @@
 // POST, req: email, password
 
-import { loginUser } from "@/services/users/usersServices";
+import { loginUser } from "@/services/auth/authServices";
 import { handleError } from "@/utils/errorHelper";
-import { userLoginSchema } from "@/validation/users/userValidator";
+import { userLoginSchema } from "@/validation/auth/authValidator";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -11,7 +11,7 @@ export async function POST(req) {
     // Validate
     const validatedData = userLoginSchema.parse(data);
     // Create Session, and passing the validated data to the Application Layer
-    const session = await loginUser(validatedData);    
+    const session = await loginUser(validatedData);
     if (!session) {
       return NextResponse.json(
         { message: "User doesn`t Exist!" },
