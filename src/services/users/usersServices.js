@@ -29,8 +29,6 @@ export async function createUser(data) {
 
   // create user on appwrite account
   const user = await account.create(uuidv4(), email, password, name);
-  // Send Verification Email
-
   // save user to database
   await databases.createDocument(
     process.env.DATABASE_ID,
@@ -53,6 +51,7 @@ export async function createUser(data) {
       notifications: true,
     }
   );
+  // Return the user data
   return user;
 }
 // 02. Login User and return session
