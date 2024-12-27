@@ -12,7 +12,13 @@ export const userRegisterSchema = z
       .string()
       .email({ message: "Invalid Email address!" })
       .toLowerCase(),
-    username: z.string().trim(),
+    username: z
+      .string()
+      .min(3, "Username must be at least 3 characters.")
+      .regex(
+        /^[a-zA-Z0-9_]+$/,
+        "Username can only contain letters, numbers, and underscores."
+      ),
     password: z.coerce
       .string()
       .max(128, { message: "Password Characters cannot exceed 128" })
@@ -43,3 +49,9 @@ export const userUpdateRecoveryEmail = z.object({
     .min(8, { message: "Password Must be 8 or more charaters long" })
     .max(128, { message: "Password characters cannot exceed 128" }),
 });
+
+// 05. Update Email Verification
+export const updateEmailVerificationSchema = z.object({
+  user_id: z.coerce.string(),
+  secret: z.string(),
+}).required();

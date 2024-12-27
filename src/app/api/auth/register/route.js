@@ -11,10 +11,7 @@ export async function POST(req) {
     // Validate againist the schema
     const validatedData = userRegisterSchema.parse(data);
     // Continue with validated Data
-    const user = await createUser(validatedData)
-    // Create Default User Preference
-    // Save User to Database
-    // Not Done
+    const user = await createUser(validatedData);
     return NextResponse.json(
       { message: "User Created", data: user },
       { status: 201 }
