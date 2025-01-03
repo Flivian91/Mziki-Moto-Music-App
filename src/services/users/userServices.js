@@ -6,7 +6,6 @@ import { Query } from "appwrite";
 // Handle th UserId Services
 export async function userDataServices(data) {
   const { userId } = data;
-  console.log(userId);
   
   try {
     if (!userId) {

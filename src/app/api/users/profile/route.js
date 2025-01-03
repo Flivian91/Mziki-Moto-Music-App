@@ -21,7 +21,7 @@ export async function POST(req) {
     const data = await req.json();
     // validate userId
     const validatedUserId = listDetailValidation.safeParse(data);
-    
+
     // Return user details
     const userData = await userDataServices(validatedUserId.data);
 
@@ -56,4 +56,3 @@ export async function PATCH(req) {
     return NextResponse.json({ message }, { status });
   }
 }
-

@@ -7,7 +7,8 @@ export const userRegisterSchema = z
     name: z
       .string()
       .toLowerCase()
-      .max(128, { message: "Name cannot exceed 128 chars" }),
+      .max(128, { message: "Name cannot exceed 128 chars" })
+      .min(3, { message: "Name must be atleast 3 characters" }),
     email: z
       .string()
       .email({ message: "Invalid Email address!" })
@@ -24,10 +25,7 @@ export const userRegisterSchema = z
       .max(128, { message: "Password Characters cannot exceed 128" })
       .min(8, { message: "Password Must be 8 or more charaters long" }),
   })
-  .required()
-  .refine((data) => data.password === data.confirmPassword, {
-    message: "Password and Confirm Password must be the same",
-  });
+  .required();
 
 //02. Login Validators
 export const userLoginSchema = z.object({

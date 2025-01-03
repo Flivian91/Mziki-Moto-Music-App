@@ -26,9 +26,12 @@ export default function LoginPage() {
 
       if (!response.ok) {
         const { message } = await response.json();
-        throw new Error(message || "Login failed");
+        throw new           (message || "Login failed");
       }
       const session = await response.json();
+      // if (!session.scopes.includes("account")) {
+      //   throw new Error("User missing required scope: account");
+      // }
       localStorage.setItem("session", JSON.stringify(session.session));
       router.push("/dashboard");
     } catch (err) {
