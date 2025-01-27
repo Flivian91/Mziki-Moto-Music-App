@@ -2,8 +2,10 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-// This is the Login page 
+// This is the Login page
 // This is a small change made but there is no change
+// tHIS IS THE STRING ADDED TO TEST IF THE SITE IS WORKING CORRECTLY
+// Kindly allow me to do this my people i am so desparate When i am done i will really appreciate for my good work done this year please
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,7 +30,7 @@ export default function LoginPage() {
 
       if (!response.ok) {
         const { message } = await response.json();
-        throw new           (message || "Login does no");
+        throw new (message || "Login does no")();
       }
       const session = await response.json();
       // if (!session.scopes.includes("account")) {
